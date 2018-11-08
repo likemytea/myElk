@@ -1,0 +1,23 @@
+安装ice环境
+wget https://zeroc.com/download/GPG-KEY-zeroc-release  --如果报错就是用http
+sudo rpm --import GPG-KEY-zeroc-release
+cd /etc/yum.repos.d
+sudo wget https://zeroc.com/download/rpm/zeroc-ice-el6.repo--如果报错就是用http
+sudo yum install ice-all-runtime ice-all-devel
+
+jar包
+/usr/share/java下面是 java的jar包
+======================================
+.ice文件：
+
+module myice
+{
+        interface Common
+        {
+                ["amd"] bool transmit( string input, out string returning);
+                ["amd"] bool transmitSsl( string input, out string returning);
+                ["amd"] bool transmitUdp( string input, out string returning);
+                ["amd"] bool transmitUdpSsl( string input, out string returning);
+        };
+};
+========================================
